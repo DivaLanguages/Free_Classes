@@ -1,4 +1,4 @@
-<!DOCTYPE html>  
+<!DOCTYPE html> 
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -9,6 +9,7 @@
       --primary-color: #4A90E2;
       --hover-color: #357ABD;
       --background-color: #f4f6f8;
+      --highlight-bg: #e0e3e7;
       --card-bg: #ffffff;
       --text-color: #333;
       --shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
@@ -21,18 +22,37 @@
       background-color: var(--background-color);
       color: var(--text-color);
       display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    .page-wrapper {
+      display: flex;
       flex-direction: column;
       align-items: center;
-      min-height: 100vh;
+      width: 100%;
     }
 
     header {
       width: 100%;
       text-align: center;
-      padding: 60px 20px 30px;
+      padding: 40px 20px 30px;
       background: linear-gradient(to right, #4A90E2, #50a6e6);
       color: white;
       position: relative;
+    }
+
+    header .free-button-wrapper {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .profile-and-social {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
     header img.profile {
@@ -46,46 +66,20 @@
 
     header h1 {
       font-size: 32px;
-      margin: 20px 0 10px;
+      margin: 25px 0 10px;
     }
 
     header p {
       font-size: 18px;
       margin: 0;
-    }
-
-    .top-left,
-    .top-right {
-      position: absolute;
-      top: 20px;
-    }
-
-    .top-left {
-      left: 20px;
-    }
-
-    .top-right {
-      right: 20px;
-    }
-
-    .instagram-button img {
-      width: 32px;
-      height: 32px;
-      border-radius: 8px;
-      box-shadow: var(--shadow);
-      transition: transform 0.2s;
-      margin-left: 8px;
-    }
-
-    .instagram-button img:hover {
-      transform: scale(1.1);
+      margin-bottom: 14px;
     }
 
     .free-classes-button {
       background-color: white;
       color: var(--primary-color);
       font-weight: 600;
-      padding: 8px 14px;
+      padding: 10px 16px;
       border: none;
       border-radius: 8px;
       cursor: pointer;
@@ -160,6 +154,29 @@
       padding: 20px;
       font-size: 14px;
       color: #777;
+      text-align: center;
+    }
+
+    .social-box {
+      margin-top: 18px;
+      padding: 10px 26px;
+      background-color: var(--highlight-bg);
+      border-radius: 10px;
+      box-shadow: var(--shadow);
+      display: inline-flex;
+      justify-content: center;
+      gap: 14px;
+      align-items: center;
+    }
+
+    .social-box a img {
+      width: 21px;
+      height: 21px;
+      transition: transform 0.2s;
+    }
+
+    .social-box a img:hover {
+      transform: scale(1.1);
     }
 
     @media (max-width: 600px) {
@@ -169,11 +186,6 @@
 
       .custom-button {
         font-size: 16px;
-      }
-
-      .instagram-button img {
-        width: 28px;
-        height: 28px;
       }
 
       .free-classes-button {
@@ -188,47 +200,57 @@
   </style>
 </head>
 <body>
+  <div class="page-wrapper">
 
-  <header>
-    <div class="top-left">
-      <a href="https://www.instagram.com/dv_lingo/" target="_blank" class="instagram-button">
-        <img src="instagram.png" alt="Instagram">
-      </a>
+    <header>
+      <div class="free-button-wrapper">
+        <a href="https://divalanguages.github.io/Free_Classes/" target="_blank" class="free-classes-button">Go to: Free Classes</a>
+      </div>
+
+      <div class="profile-and-social">
+        <img src="bona.png" alt="Instructor Photo" class="profile">
+
+        <div class="social-box">
+          <a href="https://www.instagram.com/dv_lingo/" target="_blank">
+            <img src="instagram.png" alt="Instagram">
+          </a>
+          <a href="https://www.facebook.com/profile.php?id=61573026435396" target="_blank">
+            <img src="Facebook.png" alt="Facebook">
+          </a>
+          <a href="https://www.tiktok.com/@divss75?_t=ZS-8vT45GJRlqc&_r=1" target="_blank">
+            <img src="Tiktok.png" alt="TikTok">
+          </a>
+        </div>
+      </div>
+
+      <h1>Welcome to your language home</h1>
+      <p>-With each language, you live a new life-</p>
+    </header>
+
+    <div class="card">
+      <h2>Manage Your Class</h2>
+      <div class="button-container">
+        <a class="custom-button" href="https://docs.google.com/forms/d/e/1FAIpQLScLrm8SZisdgM_gXMuKdeAI9g3Xaw_1GFTHnwbixJOatUQ0oQ/viewform?usp=dialog" target="_blank">
+          📘 Book a New Class
+        </a>
+
+      </div>
+
+      <h2 class="calendar-label">Check My Calendar</h2>
+
+      <div class="calendar-container">
+        <iframe 
+          src="https://calendar.google.com/calendar/embed?src=a42878222658e306f920a68b096d7cf29c51cb57e442a09aab1cbb32a206d7e3%40group.calendar.google.com&showTitle=0&showPrint=0&showTabs=0&showCalendars=0&mode=AGENDA"
+          frameborder="0" 
+          scrolling="no">
+        </iframe>
+      </div>
     </div>
-    <div class="top-right">
-      <a href="https://divalanguages.github.io/" target="_blank" class="free-classes-button">Go to: Regular Classes</a>
-    </div>
 
-    <img src="bona.png" alt="Instructor Photo" class="profile">
-    <h1>Welcome to your language home</h1>
-    <p>-With each language, you live a new life-</p>
-  </header>
+    <footer>
+      © Your English/Indonesian Coach · All rights reserved
+    </footer>
 
-  <div class="card">
-    <h2>Manage Your Class</h2>
-    <div class="button-container">
-      <a class="custom-button" href="https://docs.google.com/forms/d/e/1FAIpQLSfvw8vyKRF9d2eoGOzTk3Z-XFmjgSClnhQ6aKmdL03MndyDQA/viewform?usp=dialog" target="_blank">
-        📘 Book a Free Class
-      </a>
-      <a class="custom-button" href="https://docs.google.com/forms/d/e/1FAIpQLSfyQ_APdatyfIHT8hKJsTpb5g5HfeUfdWTMNEFXoXbUz2QgDw/viewform?usp=dialog" target="_blank">
-        ❌ Cancel a Free Class
-      </a>
-    </div>
-
-    <h2 class="calendar-label">Check My Calendar</h2>
-
-    <div class="calendar-container">
-      <iframe 
-        src="https://calendar.google.com/calendar/embed?src=a42878222658e306f920a68b096d7cf29c51cb57e442a09aab1cbb32a206d7e3%40group.calendar.google.com&ctz=Europe%2FMadrid&showTitle=0&showPrint=0&showTabs=0&showCalendars=0&mode=AGENDA" 
-        frameborder="0" 
-        scrolling="no">
-      </iframe>
-    </div>
   </div>
-
-  <footer>
-    © Your English/Indonesian Coach · All rights reserved
-  </footer>
-
 </body>
 </html>
